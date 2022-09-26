@@ -1,0 +1,10 @@
+#timer {
+  padding: 50px 100px;
+  border-top: 2px solid rgb(39, 39, 235);
+  border-bottom: 2px solid rgb(39, 39, 235);
+  border-radius: 10px;
+  color: yellowgreen;
+  display: inline-block;
+  background-color: black;
+  font: bold 50px Arial, Helvetica, sans-serif;
+}
