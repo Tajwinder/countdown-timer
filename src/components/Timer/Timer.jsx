@@ -1,18 +1,24 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Timer.css";
-import CountdownTimer from "../CountdownTimer/CountdownTimer";
+import { CountdownTimer } from "../CountdownTimer";
 
-const Timer = () => {
+export const Timer = () => {
   const [status, setStatus] = useState("PAUSE");
 
+  const handleClick = () => {
+    setStatus(() => (status === "PLAY" ? "PAUSE" : "PLAY"));
+  };
+
   return (
-    <div>
+    <>
       <h1>Timer</h1>
       <CountdownTimer status={status} timeLimit={10} />
-      <button onClick={() => setStatus("PAUSE")}>Pause</button>
-      <button onClick={() => setStatus("PLAY")}>Play</button>
-    </div>
+      <button
+        id={status === "PLAY" ? "btn-pause" : "btn-play"}
+        onClick={handleClick}
+      >
+        {status === "PAUSE" ? "Play" : "Pause"}
+      </button>
+    </>
   );
 };
-
-export default Timer;
